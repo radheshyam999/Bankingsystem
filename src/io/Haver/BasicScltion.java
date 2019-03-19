@@ -7,7 +7,7 @@ public class BasicScltion {
 	 void BasicStuture() {
 	 	byte MethodOption;
 		 Scanner TakeInput = new Scanner(System.in);
-		 
+		 CheckDataAndActOnThat AcessData = new CheckDataAndActOnThat();
 		 System.out.print(1  +"  Withdrawal \t");
 		 System.out.println(2 +"  Deposite ");
 		 System.out.print(3 + "  Inquire \t");
@@ -17,29 +17,30 @@ public class BasicScltion {
 		 System.out.print("    \t " + " \t " + "\t");
 		
 		 System.out.println(7 +" Update Phone Number ");
-		 System.out.println("Pleas Enter A Number ");
+		 System.out.println("Pleas Choose what You want to do ");
 		MethodOption = TakeInput.nextByte();
 		 switch (MethodOption){
 			 case 1:
-			 	//first method
+			 	  AcessData.Withdrawal();
 				 break;
 			 case 2:
-			 	//Scond Method
+			 	AcessData.deposite ();
 				 break;
 			 case 3:
-			 	//third method
+			 	
+				 AcessData.INQUIRE ();
 				 break;
 			 case 4:
-			 	// fourth method
+			 	System.out.println("Thank You For Using");
 				 break;
 			 case 5:
-			 	//fifth method
+			 	
 				 break;
 				 case 6:
-				 	//sixth Method
+				 	AcessData.CreateAcount ();
 					 break;
 			 case 7:
-			 	//seven Method
+			 	AcessData.ChangPhoneNumber ();
 				 break;
 			 	
 		 	

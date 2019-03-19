@@ -9,6 +9,6 @@ public class Main {
       //AcessData.CheckUserAccount();
         
        BasicScltion StartScltion = new BasicScltion();
-       StartScltion.BasicStuture();
+       StartScltion.BasicStuture();  // caaling That function here
     }
 }

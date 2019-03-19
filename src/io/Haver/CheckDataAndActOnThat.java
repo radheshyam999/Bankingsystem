@@ -1,26 +1,57 @@
 package io.Haver;
 
-import jdk.dynalink.beans.StaticClass;
+
 
 import java.util.Scanner;
 
  class CheckDataAndActOnThat {
  Scanner input =  new Scanner(System.in);
- 	static double TotalBlance;
- 	       void Withdrawal(double withdrawalAmount){
- 	       	  CheckDataAndActOnThat AcessCheckUser = new CheckDataAndActOnThat();
- 	       	  AcessCheckUser.CheckUserAccount();
- 	       	  System.out.println("Pleas Enter Amount");
- 	       	  withdrawalAmount= input.nextDouble();
- 	       	  
-           }
+ BasicScltion AcessDataFromBasic = new BasicScltion();
+       double TotalBlance=50000;
+ 	 
+ 	       double  Withdrawal(){  // function for withdrawal
+	           
+	           double withdrawalAmount;
+ 	       	   CheckDataAndActOnThat AcessCheckUser = new CheckDataAndActOnThat();
+ 	       	   AcessCheckUser.CheckUserAccount();
+ 	       	   System.out.println("Pleas Enter Amount");
+ 	       	   withdrawalAmount= input.nextDouble();
+ 	       	   TotalBlance = TotalBlance-withdrawalAmount;
+ 	       	   System.out.print("Your Blance is" +TotalBlance);
+	          
+ 	       	   AcessDataFromBasic.BasicStuture ();
+	           return TotalBlance;
+           
+ 	       }
+            double deposite(){
+ 	       	double AmountOfDeposite;
+ 	       	CheckDataAndActOnThat AcessDepsite = new CheckDataAndActOnThat ();
+ 	       	AcessDepsite.CheckUserAccount ();
+ 	       	System.out.println("Pleas Enter Amoutn That You Want to Deposite");
+ 	       	   AmountOfDeposite = input.nextDouble();
+ 	       	   TotalBlance = TotalBlance+AmountOfDeposite;
+ 	       	   System.out.println("Your Blance is " + TotalBlance);
+	            AcessDataFromBasic.BasicStuture ();
+ 	       	return 0;
+            }
+
+
+     void  INQUIRE(){
+ 	       	System.out.println("Your blance is " +TotalBlance);
+	     AcessDataFromBasic.BasicStuture ();
+ 	       	
+       }
+       void ChangePin(){
+ 	       	CheckUserAccount ();
+	       AcessDataFromBasic.BasicStuture ();
+       }
  	
  	
  	
  	
          
 	      void CheckUserAccount(){
-		         int AccountNumber=134567;
+ 	       	   int AccountNumber=134567;
 		       int YourAccountNumber;
 		       char DoYouHave;
 		       int AccountPin=4186;
@@ -37,9 +68,13 @@ import java.util.Scanner;
 			           System.out.println("What Is Your Pin");
 			           YourAccountPin =input.nextInt();
 		           	      if(AccountPin==YourAccountPin){
-		           	      
+			                  System.out.println("Your Process is Going to complete...");
 		           	      
 		                  }
+		           }
+		           else{
+		           	System.out.println("wrong Account Number Pleas Enter Again");
+		           	CheckUserAccount ();
 		           }
 	           }
 	      	   else{
@@ -49,7 +84,15 @@ import java.util.Scanner;
 	      	
 	      }
 	      
-	       void CreateAcount(String Name, String FatherName, String MatherName, int PhoneNumber,int AdharCardNumber){
+	       void ChangPhoneNumber(){
+ 	       	    System.out.print("your phone Number Going To Update ");
+ 	       	    CheckUserAccount ();
+		       AcessDataFromBasic.BasicStuture ();
+ 	       }
+	      
+	       void CreateAcount(){
+		       String Name, FatherName,MatherName;
+		       int PhoneNumber ,AdharCardNumber;
 	      	    char DetailesTrue;
 	      	    System.out.println("What is Your Name");
 	      	    Name = input.nextLine();
@@ -59,15 +102,15 @@ import java.util.Scanner;
 	      	    MatherName = input.nextLine();
 		        System.out.println("What is PhoneNumber");
 		        PhoneNumber = input.nextInt();
-		       System.out.println("What s ADharCardNumber");
-		       PhoneNumber = input.nextInt();
+		        System.out.println("What s ADharCardNumber");
+		        AdharCardNumber = input.nextInt();
 		        System.out.print("pleas check your Detailes");
 		        System.out.println(Name);
-		       System.out.println(FatherName);
-		       System.out.println(MatherName);
-		       System.out.println(PhoneNumber);
-		       System.out.println(AdharCardNumber);
-		       DetailesTrue = input.next().charAt(0);
+		        System.out.println(FatherName);
+		        System.out.println(MatherName);
+		        System.out.println(PhoneNumber);
+		        System.out.println(AdharCardNumber);
+		        DetailesTrue = input.next().charAt(0);
 		       
 		       if (DetailesTrue =='Y'){
 		       	System.out.println("Your Account Going  to Craete ....");
@@ -75,15 +118,15 @@ import java.util.Scanner;
 		       }
 		       else{
 		       	   System.out.println("Pleas  insert Data Again");
-		       	   CreateAcount(Name,FatherName,MatherName,PhoneNumber,AdharCardNumber);
+		       	   CreateAcount();
 		       	
 		       }
 		       
 	       }
-	       void CheckAccountValid(){
-	      
+	      // void CheckAccountValid(){
+ 	      
 	      	
-	       }
+	       //}
 	      
 	
 	
